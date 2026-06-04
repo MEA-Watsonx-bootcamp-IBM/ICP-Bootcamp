@@ -1,6 +1,6 @@
 # UAE ICP Agentic Bootcamp
 
-**IBM watsonx Orchestrate · UI + Python Tool**
+**IBM watsonx Orchestrate**
 
 > **ICP — Visa Eligibility Processing | AI Agent Development Bootcamp**
 >
