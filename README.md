@@ -131,9 +131,9 @@ Three passports and matching birth certificates are provided. Each has a specifi
 
 | Role | Person | Passport | Birth Certificate |
 |---|---|---|---|
-| 🔵 Training — used while building | Juan Tapia | [JT_polpp.jpg](#) | [birth_certificate_juan_tapia.pdf](#) |
-| ✅ Test: ELIGIBLE | Maksym Staniszewski | [maksym_passport.png](#) | [birth_certificate_maksym.pdf](#) |
-| ❌ Test: REJECTED | Celeste Nguemo | [cameroon_passport.jpg](#) | [birth_certificate_celeste_nguemo.pdf](#) |
+| 🔵 Training — used while building | Juan Tapia | [JT_polpp_passport.jpg](ICP_Documents/Training/JT_polpp_passport.jpg) | [JT_polpp_birth certificate.png](ICP_Documents/Training/JT_polpp_birth%20certificate.png) |
+| ✅ Test: ELIGIBLE | Maksym Staniszewski | [maksym_passport.png](ICP_Documents/Testing_True/maksym_passport.png) | [maksym_birth_certificate.png](ICP_Documents/Testing_True/maksym_birth_certificate.png) |
+| ❌ Test: REJECTED | Celeste Nguemo | [cameroon_passport.jpg](ICP_Documents/Testing_False/cameroon_passport.jpg) | [cameroon_birth_certificate.png](ICP_Documents/Testing_False/cameroon_birth_certificate.png) |
 
 > During **Part 1** upload the **training documents** (Juan Tapia) into the Document Extractor nodes.
 > Swap to test documents during [Test Scenarios](#test-scenarios).
@@ -152,6 +152,9 @@ Three passports and matching birth certificates are provided. Each has a specifi
 ```
 ☰ Hamburger menu → Build → Create Agent → From scratch
 ```
+<img width="1325" height="761" alt="image" src="https://github.com/user-attachments/assets/59fc395d-0c3c-4996-92b2-b124b81fbb36" />
+<img width="1336" height="759" alt="image" src="https://github.com/user-attachments/assets/6b1ad2a8-9bd8-4b67-ba37-acf30bbb255a" />
+
 
 | Field | Value |
 |---|---|
@@ -161,6 +164,8 @@ Three passports and matching birth certificates are provided. Each has a specifi
 Click **Create**.
 
 Under **Style** select `Default`.
+<img width="896" height="745" alt="image" src="https://github.com/user-attachments/assets/eeeec3da-cb39-4f99-a79a-5539c79cf150" />
+
 
 ---
 
@@ -177,12 +182,15 @@ Do not make any decisions or assessments about the documents.
 Do not add any commentary or explanation to the output.
 Return only what the workflow produces.
 ```
+<img width="1142" height="757" alt="image" src="https://github.com/user-attachments/assets/6635d0f9-dfaa-430a-934e-c57beaace47e" />
 
 ---
 
 ### 1.3 Create the Agentic Workflow
 
 Click the **Toolset** tab on the right side menu → Click **Add tool** → Select **Agentic Workflow**.
+<img width="998" height="754" alt="image" src="https://github.com/user-attachments/assets/317c7e75-aab2-4ccd-8409-d439865285ef" />
+<img width="1188" height="757" alt="image" src="https://github.com/user-attachments/assets/530b871d-1beb-4d1c-9ddc-09089a1e41bc" />
 
 When prompted, enter a name for the workflow:
 
@@ -190,7 +198,7 @@ When prompted, enter a name for the workflow:
 Document_workflow
 ```
 
-Click **Create**. This opens the workflow canvas.
+Click **start building**. This opens the workflow canvas.
 
 > **How to add nodes:**
 > Hover over the arrow between two nodes → click the **+** button that appears → select the node type from the menu.
@@ -199,13 +207,18 @@ Click **Create**. This opens the workflow canvas.
 
 ### 1.4 Build the Workflow
 
-#### Node 1 — Collect from User (File Upload)
+#### Node 1 & 2 — Collect from User (File Upload)
 
 Click **+** on the arrow between START and END → select **Collect from user → Upload file**
+<img width="1317" height="713" alt="image" src="https://github.com/user-attachments/assets/5e13935a-6e67-44a7-8093-181a7e9c960b" />
 
-> **Rename:** Click the **pencil icon** (top-left of node) → type `Upload Documents`
+> **Rename:** Click the **pencil icon** (top-left of node) → type `Passport`
+<img width="931" height="745" alt="image" src="https://github.com/user-attachments/assets/f14549ab-f4f5-4eaf-97ca-5d93a30651e4" />
 
-Inside the node, add two file upload fields by clicking **Add field**:
+Similarly 1 more node after the previous node by click **+**, Label it `Birth Certificate`
+
+It should now look like this :
+<img width="614" height="722" alt="image" src="https://github.com/user-attachments/assets/af4c6b69-b729-4f02-b013-272e39cdf802" />
 
 | Label |
 |---|
@@ -216,9 +229,10 @@ Inside the node, add two file upload fields by clicking **Add field**:
 
 ---
 
-#### Node 2 — Document Extractor (Passport)
+#### Node 3 — Document Extractor (Passport)
 
 Click **+** on the arrow between Node 1 and END → select **Add a flow activity → Document extractor**
+<img width="1242" height="740" alt="image" src="https://github.com/user-attachments/assets/5cfb007b-ec30-4495-8a97-566bc136b7f5" />
 
 Click on the node to open its configuration panel.
 
@@ -228,17 +242,21 @@ When prompted, select document type: `Unstructured`
 >
 > **Change model:** Click the model selector (top-right of node) → select `gpt-oss-120b`
 
-Drag and drop the training passport file `JT_polpp.jpg` into the document upload area of the node.
-
-> This is the training document. You will swap it during test scenarios.
+Drag and drop the training passport file `JT_polpp_passport.jpg` into the document upload area of the node.
+<img width="1287" height="758" alt="image" src="https://github.com/user-attachments/assets/80bb723e-265c-418d-ab8b-df124a87392d" />
+> This is the training document. 
 
 **Map the document source** — click **Input mapping** → click **`{x}`** on the document field:
+<img width="1329" height="749" alt="image" src="https://github.com/user-attachments/assets/b5a4ee33-887a-4509-94d8-87fad71c8610" />
 
 | Input | Source component | Variable to select |
 |---|---|---|
 | Document | Upload Documents | `Passport` |
 
 Click **Add field** and add these fields:
+<img width="1267" height="703" alt="image" src="https://github.com/user-attachments/assets/8611b1fc-8ff3-46f1-90df-6b6811d080b2" />
+<img width="793" height="763" alt="image" src="https://github.com/user-attachments/assets/5a915a14-a2dd-4819-be51-50ebbaa5510a" />
+
 
 | Field name | Type | Description |
 |---|---|---|
@@ -252,7 +270,7 @@ Click **Add field** and add these fields:
 
 ---
 
-#### Node 3 — Document Extractor (Birth Certificate)
+#### Node 4 — Document Extractor (Birth Certificate)
 
 Click **+** between Node 2 and END → select **Add a flow activity → Document extractor**
 
@@ -283,7 +301,7 @@ Click **Add field** and add:
 
 ---
 
-#### Node 4 — Generative Prompt (Package Output)
+#### Node 5 — Generative Prompt (Package Output)
 
 Click **+** between Node 3 and END → select **Add a flow activity → Generative prompt**
 
@@ -292,6 +310,7 @@ Click on the node to open its configuration panel.
 > **Rename:** `Package Output`
 
 **Input variables** — click the **Input variables** tab → **Add variable**:
+<img width="1299" height="757" alt="image" src="https://github.com/user-attachments/assets/4184d3ba-f10d-4a33-b3ed-5ff43dc7c4b2" />
 
 | Variable name | Type |
 |---|---|
@@ -351,6 +370,8 @@ Return only this structure and nothing else:
   }
 }
 ```
+<img width="1741" height="977" alt="image" src="https://github.com/user-attachments/assets/7ca1f7a9-6816-4849-bd74-e53aad959e61" />
+
 
 **Data Mapping** — click **Input mapping** tab → **Add mapping**:
 
@@ -394,6 +415,8 @@ Package Output  (Generative Prompt)
   ▼
 END
 ```
+<img width="274" height="918" alt="image" src="https://github.com/user-attachments/assets/85ce7c1a-f282-4001-a430-05d1a77de53b" />
+
 
 ---
 
@@ -426,12 +449,13 @@ Click **Edit data mapping** and map each variable using the **`{x}`** variable p
 | `Nationality_code` | Extract passport | `nationality_code` |
 | `passport_number` | Extract passport | `passport_number` |
 | `surname` | Extract passport | `surname` |
+<img width="1350" height="1492" alt="image" src="https://github.com/user-attachments/assets/fe79b65d-d71a-4afe-b057-02a6f4208ebb" />
 
 ---
 
 ### 1.5 Save and Exit
 
-Click **Save** (top-right) → Click **Done** (top-right) to return to the agent page.
+Click **Done** (top-right) to return to the agent page.
 
 ---
 
@@ -626,6 +650,8 @@ icp-bootcamp/
 ├── eligibility_check_tool.py
 └── requirement.txt
 ```
+<img width="421" height="261" alt="image" src="https://github.com/user-attachments/assets/a3befb7a-9b69-4cb4-a0bb-3484ddd65922" />
+
 
 ---
 
@@ -653,6 +679,7 @@ pip install ibm-watsonx-orchestrate
 pip3 install ibm-watsonx-orchestrate
 ```
 
+
 Add your environment — replace `<your-instance-url>` with the **Service instance URL** you copied in [Prerequisites](#prerequisites):
 
 ```bash
@@ -660,6 +687,7 @@ orchestrate env add -n ICP -u <your-instance-url>
 ```
 
 > `-n ICP` is the name for this environment. You will use it every session.
+<img width="2314" height="132" alt="image" src="https://github.com/user-attachments/assets/683332e5-0360-46e3-9ef8-755465510b95" />
 
 Activate the environment:
 
@@ -668,6 +696,7 @@ orchestrate env activate ICP
 ```
 
 When prompted, enter your **API key** and press Enter.
+<img width="2172" height="176" alt="image" src="https://github.com/user-attachments/assets/45bc30ef-963b-4d32-a3b3-cd2d67a51d06" />
 
 ---
 
@@ -676,6 +705,8 @@ When prompted, enter your **API key** and press Enter.
 ```bash
 orchestrate tools import --kind python -r requirement.txt -f eligibility_check_tool.py
 ```
+<img width="2180" height="120" alt="image" src="https://github.com/user-attachments/assets/df91e079-6888-491f-8fee-a2c021fd9445" />
+
 
 Verify the tool was imported — go to your browser:
 
@@ -684,6 +715,7 @@ Verify the tool was imported — go to your browser:
 ```
 
 If `check_visa_eligibility` appears in the list, the tool is ready. ✅
+<img width="1311" height="645" alt="image" src="https://github.com/user-attachments/assets/5c270935-b64f-4cbd-8449-6dd037952e54" />
 
 ---
 
@@ -780,11 +812,27 @@ these two questions before doing anything else:
       For example: Hilton Hotel, Dubai or relatives in Abu Dhabi"
 
 Wait for both answers before proceeding.
-If the user answers both questions in one message or answers them
-out of order, recognise and capture both immediately.
-Do not repeat questions that have already been answered.
-If the user answers only one question, only ask for the missing answer.
-If the user's answer is unclear, ask only for clarification on that point.
+
+If the user answers both questions in one message or
+answers them out of order, recognise and capture both
+answers immediately. Do not repeat questions that have
+already been answered.
+
+If the user answers only one question, only ask for
+the missing answer. Never repeat a question the user
+has already answered.
+
+If the user's answer is general, unclear or incomplete, ask
+only for clarification on that specific point.
+
+Examples:
+- User says "im planning to stay in al ain" → capture
+  accommodation as "Al Ain, Abu Dhabi, UAE" and only ask
+  "Do you have a confirmed flight ticket to the UAE?"
+
+- User says "yes i have a ticket, staying at Hilton Dubai"
+  → capture both answers and proceed to confirmation
+  without asking anything further.
 
 If the user answers NO to the flight ticket question:
   - Do not proceed further.
@@ -800,7 +848,8 @@ AND provides an accommodation address:
 
   - Identify which of the 7 UAE Emirates is mentioned.
     Valid Emirates (accept common misspellings):
-      Dubai, Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, Fujairah
+      Dubai, Abu Dhabi, Sharjah, Ajman,
+      Umm Al Quwain, Ras Al Khaimah, Fujairah
     Common misspellings to accept:
       "Abudhabi" → Abu Dhabi
       "Sharja" → Sharjah
@@ -808,66 +857,85 @@ AND provides an accommodation address:
       "Ras al khaima" → Ras Al Khaimah
       "Umm al quain" → Umm Al Quwain
 
-  - If no valid Emirate is mentioned, ask:
+  - If no valid Emirate is mentioned or recognisable,
+    ask the user:
     "Which Emirate in the UAE will you be staying in?
      (Dubai / Abu Dhabi / Sharjah / Ajman /
       Umm Al Quwain / Ras Al Khaimah / Fujairah)"
+    Wait for the answer before proceeding.
 
-  - If the location cannot be matched to any of the 7 Emirates, respond:
-    "We are unable to process your application. The accommodation address
-     must be within one of the 7 UAE Emirates."
+  - If the user provides a location that is NOT one of
+    the 7 Emirates and cannot be matched to one, respond:
+    "We are unable to process your application. The
+     accommodation address must be within one of the
+     7 UAE Emirates. Please provide a valid UAE address."
     End the conversation.
 
-  - Structure the address cleanly:
+  - Once a valid Emirate is confirmed, structure the
+    address cleanly in this format:
     [Property/Area], [Emirate], UAE
     Examples:
-      "Hilton on sheikh zayed road dubai" → "Hilton, Sheikh Zayed Road, Dubai, UAE"
+      "Hilton on sheikh zayed road dubai" →
+        "Hilton, Sheikh Zayed Road, Dubai, UAE"
       "relatives in Fujairah" → "Fujairah, UAE"
+      "my friend's place in abu dhabi" → "Abu Dhabi, UAE"
       "staying in ajman" → "Ajman, UAE"
 
-  - Always append UAE if not already mentioned.
+  - Always append UAE at the end if not already mentioned.
 
-  - Show the summary:
+  - Present the structured summary to the user in this format:
     "Here is what I have recorded:
     - Flight Ticket: Yes
     - Accommodation Address: [structured address]
 
     Kindly type "Confirm" to proceed"
 
-  - Wait for the user to type "confirm" explicitly before proceeding.
-  - If the user wants changes, update and show the summary again.
+  - Wait for the user to type "confirm". Do not proceed until user types it properly
+  - If the user wants to make changes, update the relevant
+    detail and show the summary again asking to type "confirm" to proceed.
+  - Only proceed to Phase 1 AFTER the user types "confirm" explicitly.
 
 PHASE 1 — Document extraction:
-  - Tell the user: "Thank you for confirming. I will now extract your documents for processing."
+  - Inform the user:
+    "Thank you for confirming. I will now extract your
+     documents for processing."
   - Call document_agent immediately.
   - Wait for document_agent to return the extracted data.
   - If document_agent returns INCOMPLETE, inform the user and stop.
 
 PHASE 2 — Eligibility check:
   - Immediately after document_agent returns successfully,
-    call eligibility_agent. This is mandatory and must never be skipped.
+    you MUST call eligibility_agent. This step is mandatory
+    and must never be skipped.
   - Do not wait for the user. Do not ask any questions.
-  - Pass these exact field names and values verbatim from document_agent:
+  - Call eligibility_agent with these exact field names
+    and values — pass every value verbatim as received
+    from document_agent, do not modify any value:
       passport_num: [exact value from document_agent]
+      nationality: [exact value from document_agent]
       nationality_code: [exact value from document_agent]
-      Given_name: [exact value from document_agent]
+      given_name: [exact value from document_agent]
       surname: [exact value from document_agent]
-      Date_of_Birth: [exact value from document_agent]
-      Date_of_Expiry: [exact value from document_agent]
-      Birth_Certificate_DOB: [exact value from document_agent]
-      Birth_Certificate_Full_Name: [exact value from document_agent]
+      DOB: [exact value from document_agent]
+      EXP_DATE: [exact value from document_agent]
+      DOB_birth_certificate: [exact value from document_agent]
+      full_name_birth_certificate: [exact value from document_agent]
       has_flight_ticket: true
       accommodation_address: [confirmed structured address from Phase 0]
-  - Do not show any message between document extraction and the eligibility result.
-  - Only speak to the user when eligibility_agent returns the final result.
+  - Do not show any message to the user between document
+    extraction and the eligibility result.
+  - Only speak to the user again when eligibility_agent
+    returns the final result.
 
 PHASE 3 — Deliver result:
-  Present the result using ** for bold labels:
+  Once you receive the result from eligibility_agent,
+  present the final result to the user in this exact
+  structure. Use ** for bold labels:
 
-  **Applicant:** [Given_name] [surname]
+  **Applicant:** [given_name] [surname]
   **Passport Number:** [passport_num]
-  **Nationality:** [nationality_code]
-  **Date of Birth:** [Date_of_Birth]
+  **Nationality:** [nationality]
+  **Date of Birth:** [DOB]
 
   ---
 
@@ -878,21 +946,34 @@ PHASE 3 — Deliver result:
 
   ---
 
-  If ELIGIBLE: congratulate and wish them a pleasant trip.
-  If REJECTED: advise clearly what to address before reapplying.
+  If ELIGIBLE:
+    Add a congratulations message and wish them a pleasant trip to the UAE.
 
-  Only show these 4 fields. Never show accommodation, flight ticket,
-  or birth certificate details in the final result.
+  If REJECTED:
+    Add a message clearly advising what they need to address before reapplying.
 
-Rules:
+  Only include these 4 applicant fields in the summary.
+  Do not include accommodation address, flight ticket,
+  birth certificate details, or any other extracted fields.
+  Never present the status and details as a single concatenated line.
+  Always break status and details into separate lines.
+
+Rules you must always follow:
 - Never skip Phase 0.
-- Never call document_agent before the user types "confirm".
+- Never call document_agent before the user confirms in Phase 0.
 - Never call document_agent if has_flight_ticket is NO.
-- Never call document_agent if the address is not within the 7 UAE Emirates.
-- Always call eligibility_agent immediately after document_agent succeeds.
-- Never modify any value from document_agent before passing to eligibility_agent.
-- Never narrate data being passed between agents.
-- Always be polite and professional.
+- Never call document_agent if the accommodation address
+  is not within one of the 7 UAE Emirates.
+- Always call eligibility_agent immediately after
+  document_agent succeeds — this is not optional.
+- Never modify, reformat or approximate any value
+  received from document_agent before passing to
+  eligibility_agent. Pass everything verbatim.
+- Never call eligibility_agent before document_agent has succeeded.
+- Never narrate or list data being passed between agents.
+- Never make up or assume any information not provided by the user
+  or returned by an agent.
+- Always be polite and professional throughout.
 ```
 
 ---
@@ -913,6 +994,7 @@ Click **Add**.
 ## Full Pipeline Test
 
 On the Master Agent page, click the **refresh button** on the top left of the agent chat panel on the right side → click the quick start prompt:
+<img width="1346" height="755" alt="image" src="https://github.com/user-attachments/assets/1f6f6b70-b336-4949-a9bd-1a12e87b833f" />
 
 ```
 Check for Tourist Visa Eligibility
@@ -963,53 +1045,45 @@ Agent : **Applicant:** Juan Tapia
 
 ## Test Scenarios
 
-### How to Swap Documents
-
-```
-document_agent → Tools → Document_workflow → Edit
-→ Extract Passport Fields node → change uploaded file
-→ Extract Birth Cert Fields node → change uploaded file
-→ Save → Done
-```
+When the Master Agent asks you to upload your documents, upload the relevant passport and birth certificate for each scenario below.
 
 ---
 
 ### Scenario 1 — Training Run ✅
 
+Upload when prompted:
+
 | | |
 |---|---|
-| Passport | `JT_polpp.jpg` |
-| Birth cert | `birth_certificate_juan_tapia.pdf` |
-| Nationality | POL |
-| Expiry | 2030-02-24 |
+| Passport | [JT_polpp_passport.jpg](ICP_Documents/Training/JT_polpp_passport.jpg) |
+| Birth cert | [JT_polpp_birth_certificate.png](ICP_Documents/Training/JT_polpp_birth%20certificate.png) |
 | **Expected** | **ELIGIBLE** |
 
 ---
 
 ### Scenario 2 — Test ELIGIBLE ✅
 
+Upload when prompted:
+
 | | |
 |---|---|
-| Passport | `maksym_passport.png` |
-| Birth cert | `birth_certificate_maksym.pdf` |
-| Nationality | POL |
-| Expiry | 2034-06-06 |
+| Passport | [maksym_passport.png](ICP_Documents/Testing_True/maksym_passport.png) |
+| Birth cert | [maksym_birth_certificate.png](ICP_Documents/Testing_True/maksym_birth_certificate.png) |
 | **Expected** | **ELIGIBLE** |
 
 ---
 
 ### Scenario 3 — Test REJECTED ❌
 
+Upload when prompted:
+
 | | |
 |---|---|
-| Passport | `cameroon_passport.jpg` |
-| Birth cert | `birth_certificate_celeste_nguemo.pdf` |
-| Nationality | CMR |
-| Expiry | 2026-08-10 |
+| Passport | [cameroon_passport.jpg](ICP_Documents/Testing_False/cameroon_passport.jpg) |
+| Birth cert | [cameroon_birth_certificate.png](ICP_Documents/Testing_False/cameroon_birth_certificate.png) |
 | **Expected** | **REJECTED — nationality restriction** |
 
 > CMR is in the restricted list. Nationality is checked first so it fires before the expiry check.
-
 ---
 
 ### Scenario 4 — No Flight Ticket ❌
@@ -1025,8 +1099,6 @@ Use any documents. When asked about a flight ticket, answer **No**.
 Use any documents. When asked for accommodation, give a location outside the UAE (e.g. "London").
 
 **Expected:** Agent stops — address must be within the 7 UAE Emirates.
-
----
 
 ## Key Concepts
 
