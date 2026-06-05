@@ -1085,23 +1085,5 @@ Upload when prompted:
 > CMR is in the restricted list. Nationality is checked first so it fires before the expiry check.
 ---
 
-## Key Concepts
-
-| Concept | Where it appears |
-|---|---|
-| `☰ → Build → Create Agent → From scratch` | How to create any agent |
-| Style: `Default` | Both sub-agents |
-| Style: `React` | Master Agent — enables multi-turn conversation |
-| Add tool → Agentic Workflow | Opens the workflow canvas inside an agent |
-| Add tool → From your tools | Attaches the imported Python tool to eligibility_agent |
-| Pencil icon | Renames any node in the canvas |
-| Model selector (top-right) | Set to `gpt-oss-120b` on Document Extractor nodes |
-| `Nationality code` field | Reads CODE field — always 3-letter ISO regardless of language |
-| Input variables + Data mapping | Wires outputs of one node into inputs of the next |
-| `@tool` decorator | Registers the Python function as a watsonx Orchestrate tool |
-| `Pydantic BaseModel` | Structured typed output from the eligibility tool |
-| `failures` list | Collects all rule failures — returns all issues at once |
-| Nationality checked first | Exits immediately for restricted nationalities |
-| Add agents → Local instance | How sub-agents are wired to the master |
-| Gate logic | Master stops if ticket is NO or address is not in UAE |
-| Separation of concerns | Agent 1 extracts · Agent 2 decides · Master orchestrates |
+## 🎉 Congratulations!
+You have successfully built and tested a fully functional 3-agent UAE ICP Tourist Visa eligibility pipeline on IBM watsonx Orchestrate — powered by government eligibility rules, live document extraction, and a deterministic Python decision engine.
