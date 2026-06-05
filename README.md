@@ -24,8 +24,6 @@
 - [Part 3 — Master Agent](#part-3--build-the-master-agent)
 - [Full Pipeline Test](#full-pipeline-test)
 - [Test Scenarios](#test-scenarios)
-- [Key Concepts](#key-concepts)
-
 ---
 
 ## 1. What is watsonx Orchestrate?
