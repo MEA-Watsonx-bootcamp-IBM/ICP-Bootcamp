@@ -1059,7 +1059,6 @@ When asked about a flight ticket, answer **No**.
 **Expected:** Agent stops immediately with mandatory requirement message.
 
 ---
-| ✅ Test: ELIGIBLE | Juan Tapia | [JT_polpp_passport.jpg](ICP_Documents/Training/JT_polpp_passport.jpg) | [JT_polpp_birth certificate.png](ICP_Documents/Training/JT_polpp_birth%20certificate.png) |
 
 ### Scenario 2 — Test ELIGIBLE ✅
 
