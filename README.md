@@ -135,8 +135,8 @@ Three passports and matching birth certificates are provided. Each has a specifi
 
 | Role | Person | Passport | Birth Certificate |
 |---|---|---|---|
-| 🔵 Training — used while building | Maksym Staniszewski | [maksym_passport.png](ICP_Documents/Testing_True/maksym_passport.png) | [maksym_birth_certificate.png](ICP_Documents/Testing_True/maksym_birth_certificate.png) |
-| ✅ Test: ELIGIBLE | Juan Tapia | [JT_polpp_passport.jpg](ICP_Documents/Training/JT_polpp_passport.jpg) | [JT_polpp_birth certificate.png](ICP_Documents/Training/JT_polpp_birth%20certificate.png) |
+| 🔵 Training — used while building | Maksym Staniszewski | [maksym_passport.png](ICP_Documents/Training/maksym_passport.png) | [maksym_birth_certificate.png](ICP_Documents/Training/maksym_birth_certificate.png) |
+| ✅ Test: ELIGIBLE | Juan Tapia | [JT_polpp_passport.jpg](ICP_Documents/Testing_True/JT_polpp_passport.jpg) | [JT_polpp_birth certificate.png](ICP_Documents/Testing_True/JT_polpp_birth%20certificate.png) |
 | ❌ Test: REJECTED | Celeste Nguemo | [cameroon_passport.jpg](ICP_Documents/Testing_False/cameroon_passport.jpg) | [cameroon_birth_certificate.png](ICP_Documents/Testing_False/cameroon_birth_certificate.png) |
 
 > During **Part 1** upload the **training documents** (Juan Tapia) into the Document Extractor nodes.
@@ -1067,8 +1067,8 @@ Upload when prompted:
 
 | | |
 |---|---|
-| Passport | [JT_polpp_passport.jpg](ICP_Documents/Training/JT_polpp_passport.jpg) |
-| Birth cert | [JT_polpp_birth certificate.png](ICP_Documents/Training/JT_polpp_birth%20certificate.png) |
+| Passport | [JT_polpp_passport.jpg](ICP_Documents/Testing_True/JT_polpp_passport.jpg) |
+| Birth cert | [JT_polpp_birth certificate.png](ICP_Documents/Testing_True/JT_polpp_birth%20certificate.png) |
 | **Expected** | **ELIGIBLE** |
 
 ---
