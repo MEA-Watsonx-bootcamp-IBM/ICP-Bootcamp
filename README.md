@@ -1052,16 +1052,11 @@ Agent : **Applicant:** Juan Tapia
 When the Master Agent asks you to upload your documents, upload the relevant passport and birth certificate for each scenario below.
 
 ---
+### Scenario 1 — No Flight Ticket ❌
 
-### Scenario 1 — Training Run ✅
+When asked about a flight ticket, answer **No**.
 
-Upload when prompted:
-
-| | |
-|---|---|
-| Passport | [JT_polpp_passport.jpg](ICP_Documents/Training/JT_polpp_passport.jpg) |
-| Birth cert | [JT_polpp_birth_certificate.png](ICP_Documents/Training/JT_polpp_birth%20certificate.png) |
-| **Expected** | **ELIGIBLE** |
+**Expected:** Agent stops immediately with mandatory requirement message.
 
 ---
 
@@ -1089,20 +1084,6 @@ Upload when prompted:
 
 > CMR is in the restricted list. Nationality is checked first so it fires before the expiry check.
 ---
-
-### Scenario 4 — No Flight Ticket ❌
-
-Use any documents. When asked about a flight ticket, answer **No**.
-
-**Expected:** Agent stops immediately with mandatory requirement message.
-
----
-
-### Scenario 5 — Invalid Address ❌
-
-Use any documents. When asked for accommodation, give a location outside the UAE (e.g. "London").
-
-**Expected:** Agent stops — address must be within the 7 UAE Emirates.
 
 ## Key Concepts
 
