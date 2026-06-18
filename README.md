@@ -1,4 +1,4 @@
-# Visa Eligibility Agentic Bootcamp
+# UAE ICP Visa Agentic Bootcamp
 
 **IBM watsonx Orchestrate**
 
