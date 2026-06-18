@@ -1,14 +1,10 @@
-<p align="center">
-  <img src="https://icp.gov.ae/wp-content/uploads/2026/05/cropped-logo-2021-2x.webp" alt="ICP UAE Logo" width="350"/>
-</p>
-
-# UAE ICP Agentic Bootcamp
+# Visa Eligibility Agentic Bootcamp
 
 **IBM watsonx Orchestrate**
 
-> **ICP — Visa Eligibility Processing | AI Agent Development Bootcamp**
+> **Visa Eligibility Processing | AI Agent Development Bootcamp**
 >
-> **Goal:** By the end of this lab, you will have built, deployed, and tested a UAE ICP Tourist Visa Eligibility system on watsonx Orchestrate — a 3-agent pipeline that reads identity documents, collects user information, applies real ICP eligibility rules, and delivers a visa decision.
+> **Goal:** By the end of this lab, you will have built, deployed, and tested a Tourist Visa Eligibility system on watsonx Orchestrate — a 3-agent pipeline that reads identity documents, collects user information, applies real eligibility rules, and delivers a visa decision.
 
 ---
 
